@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {Image, Layout} from 'antd';
+import AppRoutes from '../src/components/AppRoutes'
+import SideMenu from './components/SideMenu';
+import logo from './log.png'
+
+const {Sider, Content,Footer} = Layout;
 
 function App() {
   return (
     <div className="App"> 
-     <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-       
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+
+<Layout>
+  <Content>
+    <AppRoutes/>
+  </Content>
+  <Footer style={{ textAlign: "center" }}>
+    <h1> Salek 2022</h1>
+  </Footer>
+</Layout>
+
+<Sider style={{ height: "100vh", backgroundColor: "#93c5fd" }} >
+<Image
+    className='w-fill'
+    src={logo}
+  />
+<SideMenu/>
+</Sider>
+      </Layout>
     </div>
   );
 }
